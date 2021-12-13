@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load extras %}
+{% block content %}
+<div class="container">
+    <div class="row">
+    {% for product in products %}
+    <div class="col-md-4">
+    <h3>{{product.product_name}}</h3>
+    <img src="{{product.img.url}}">
+    <a href="{% url 'shop:productdetail' product.slug %}"> Click to see the products</a>
+    </div>
+    {% endfor %}
+    </div>
+    </div>
+{% endblock content %}

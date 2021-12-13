@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="container">
+<div class="row">
+{% for c in catvedios %}
+<div class="col-md-4">
+<h3>{{c.title}}</h3>
+<img src="{{c.img.url}}">
+<a href="{% url 'vedio:videodetail' c.slug %}"> Click to open video</a>
+</div>
+{% endfor%}
+</div>
+</div>
+{% endblock content%}
